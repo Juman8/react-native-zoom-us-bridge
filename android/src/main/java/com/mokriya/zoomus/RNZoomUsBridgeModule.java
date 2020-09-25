@@ -101,10 +101,7 @@ public class RNZoomUsBridgeModule extends ReactContextBaseJavaModule implements 
         }
 
         final MeetingService meetingService = zoomSDK.getMeetingService();
-        final MeetingSettings setting = zoomSDK.getMeetingService()
-        settings.meetingPasswordHidden = YES;
-        settings.topBarHidden = YES;
-        settings.meetingInviteHidden = YES;
+            
         if(meetingService.getMeetingStatus() != MeetingStatus.MEETING_STATUS_IDLE) {
             long lMeetingNo = 0;
             try {
@@ -128,6 +125,11 @@ public class RNZoomUsBridgeModule extends ReactContextBaseJavaModule implements 
         params.userId = userId;
         params.userType = MeetingService.USER_TYPE_API_USER;
         params.zoomAccessToken = zoomAccessToken;
+            
+        opts.no_invite = true;
+        opts.no_titlebar = true;
+        opts.no_share = true;
+
 
         int startMeetingResult = meetingService.startMeetingWithParams(reactContext.getCurrentActivity(), params, opts);
         Log.i(TAG, "startMeeting, startMeetingResult=" + startMeetingResult);
@@ -175,16 +177,16 @@ public class RNZoomUsBridgeModule extends ReactContextBaseJavaModule implements 
         }
 
         final MeetingService meetingService = zoomSDK.getMeetingService();
-        final MeetingSettings setting = zoomSDK.getMeetingService()
-        settings.meetingPasswordHidden = YES;
-        settings.topBarHidden = YES;
-        settings.meetingInviteHidden = YES;
 
         JoinMeetingOptions opts = new JoinMeetingOptions();
         JoinMeetingParams params = new JoinMeetingParams();
         params.displayName = displayName;
         params.meetingNo = meetingNo;
         params.password = meetingPassword;
+            
+        opts.no_invite = true;
+        opts.no_titlebar = true;
+        opts.no_share = true;
 
         int joinMeetingResult = meetingService.joinMeetingWithParams(reactContext.getCurrentActivity(), params, opts);
         Log.i(TAG, "joinMeeting, joinMeetingResult=" + joinMeetingResult);
