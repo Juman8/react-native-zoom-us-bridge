@@ -21,13 +21,7 @@ Library updated to use iOS SDK 5.0.24433.0616 and Android SDK version 5.0.24437.
 Install the library from npm:
 
 ```sh
-npm i @mokriya/react-native-zoom-us-bridge --save
-```
-
-or
-
-```sh
-yarn add @mokriya/react-native-zoom-us-bridge
+add "react-native-zoom-us-bridge": "github:Juman8/react-native-zoom-us-bridge" to package.json
 ```
 
 ### Linking
