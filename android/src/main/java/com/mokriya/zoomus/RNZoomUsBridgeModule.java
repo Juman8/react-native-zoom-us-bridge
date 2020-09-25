@@ -101,6 +101,10 @@ public class RNZoomUsBridgeModule extends ReactContextBaseJavaModule implements 
         }
 
         final MeetingService meetingService = zoomSDK.getMeetingService();
+        final MeetingSettings setting = zoomSDK.getMeetingService()
+        settings.meetingPasswordHidden = YES;
+        settings.topBarHidden = YES;
+        settings.meetingInviteHidden = YES;
         if(meetingService.getMeetingStatus() != MeetingStatus.MEETING_STATUS_IDLE) {
             long lMeetingNo = 0;
             try {
@@ -171,6 +175,10 @@ public class RNZoomUsBridgeModule extends ReactContextBaseJavaModule implements 
         }
 
         final MeetingService meetingService = zoomSDK.getMeetingService();
+        final MeetingSettings setting = zoomSDK.getMeetingService()
+        settings.meetingPasswordHidden = YES;
+        settings.topBarHidden = YES;
+        settings.meetingInviteHidden = YES;
 
         JoinMeetingOptions opts = new JoinMeetingOptions();
         JoinMeetingParams params = new JoinMeetingParams();
