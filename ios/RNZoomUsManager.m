@@ -40,6 +40,10 @@ static RNZoomUsBridgeEventEmitter *internalEmitter = nil;
 - (void)startMeeting:(NSString *)meetingId userName:(NSString *)userName userId:(NSString *)userId userZak:(NSString *)userZak completion:(void (^_Nonnull)(NSUInteger resultCode))completion {
   
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+      settings.meetingPasswordHidden = YES;
+      settings.topBarHidden = YES;
+      settings.meetingInviteHidden = YES;
     if (ms) {
         ms.delegate = self;
 
@@ -60,6 +64,10 @@ static RNZoomUsBridgeEventEmitter *internalEmitter = nil;
   NSLog(@"joinMeeting called on native module");
     
   MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+   MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+      settings.meetingPasswordHidden = YES;
+      settings.topBarHidden = YES;
+      settings.meetingInviteHidden = YES;
   if (ms) {
     ms.delegate = self;
       
