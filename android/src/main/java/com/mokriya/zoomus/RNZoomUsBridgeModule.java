@@ -28,6 +28,7 @@ import us.zoom.sdk.StartMeetingParamsWithoutLogin;
 
 import us.zoom.sdk.JoinMeetingOptions;
 import us.zoom.sdk.JoinMeetingParams;
+import us.zoom.sdk.MeetingViewsOptions;
 
 import com.mokriya.zoomus.RNZoomUsBridgeHelper;
 
@@ -127,9 +128,10 @@ public class RNZoomUsBridgeModule extends ReactContextBaseJavaModule implements 
         params.zoomAccessToken = zoomAccessToken;
             
         opts.no_invite = true;
-        opts.no_titlebar = true;
+        // opts.no_titlebar = true;
+        opts.no_driving_mode = true;
+        opts.meeting_views_options = MeetingViewsOptions.NO_TEXT_PASSWORD+MeetingViewsOptions.NO_TEXT_MEETING_ID;
         opts.no_share = true;
-
 
         int startMeetingResult = meetingService.startMeetingWithParams(reactContext.getCurrentActivity(), params, opts);
         Log.i(TAG, "startMeeting, startMeetingResult=" + startMeetingResult);
@@ -185,7 +187,9 @@ public class RNZoomUsBridgeModule extends ReactContextBaseJavaModule implements 
         params.password = meetingPassword;
             
         opts.no_invite = true;
-        opts.no_titlebar = true;
+        // opts.no_titlebar = true;
+        opts.no_driving_mode = true;
+        opts.meeting_views_options = MeetingViewsOptions.NO_TEXT_PASSWORD+MeetingViewsOptions.NO_TEXT_MEETING_ID;
         opts.no_share = true;
 
         int joinMeetingResult = meetingService.joinMeetingWithParams(reactContext.getCurrentActivity(), params, opts);
