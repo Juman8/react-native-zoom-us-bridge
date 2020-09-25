@@ -29,7 +29,7 @@ Library autolinks for React-Native 60 or higher.
 
 RN 59 or lower please make sure to
 ```sh
-react-native link @mokriya/react-native-zoom-us-bridge
+react-native link react-native-zoom-us-bridge
 ```
 
 Then follow the instructions for your platform to add ZoomUS SDK into your project:
@@ -154,7 +154,7 @@ You should avoid hardcoding your App/Jwt key and secret. In our example we hardc
 ### Basic joining meeting
 **APP key and secret is required**
 ```javascript
-import RNZoomUsBridge from '@mokriya/react-native-zoom-us-bridge';
+import RNZoomUsBridge from 'react-native-zoom-us-bridge';
 
 RNZoomUsBridge.initialize(
   ZOOM_APP_KEY,
@@ -172,7 +172,7 @@ RNZoomUsBridge.joinMeeting(
 **JWT key and secret is required**
 
 ```javascript
-import RNZoomUsBridge from '@mokriya/react-native-zoom-us-bridge';
+import RNZoomUsBridge from 'react-native-zoom-us-bridge';
 
 RNZoomUsBridge.initialize(
   ZOOM_APP_KEY,
