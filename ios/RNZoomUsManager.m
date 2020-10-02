@@ -44,8 +44,8 @@ static RNZoomUsBridgeEventEmitter *internalEmitter = nil;
       settings.meetingPasswordHidden = YES;
       settings.topBarHidden = YES;
       settings.meetingInviteHidden = YES;
-      settings.claimHostWithHostKeyHidden = YES;
-      settings.enableCustomMeeting = YES;
+//       settings.claimHostWithHostKeyHidden = YES;
+//       settings.enableCustomMeeting = YES;
   
     if (ms) {
         ms.delegate = self;
@@ -71,8 +71,8 @@ static RNZoomUsBridgeEventEmitter *internalEmitter = nil;
       settings.meetingPasswordHidden = YES;
       settings.topBarHidden = YES;
       settings.meetingInviteHidden = YES;
-      settings.claimHostWithHostKeyHidden = YES;
-      settings.enableCustomMeeting = YES;
+//       settings.claimHostWithHostKeyHidden = YES;
+//       settings.enableCustomMeeting = YES;
   if (ms) {
     ms.delegate = self;
       
